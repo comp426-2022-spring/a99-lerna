@@ -31,4 +31,4 @@ Database lead (TJ?)
 
 Design lead (Michael)
 
-Github BS lead (Anthony)
+Github Management lead/Misc help (Anthony)
