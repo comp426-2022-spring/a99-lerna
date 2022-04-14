@@ -9,7 +9,8 @@
 
 ## Team management (so far)
 
-Logistic Roles:
+# Logistic Roles:
+
 A review manager - someone to review pull requests and merge or reject them and manage the related discussions (Anthony)
 
 A plan manager - someone to keep an eye on the overall plan and keep the project tab/to-do list up to date (Vishy)
@@ -20,7 +21,7 @@ A release manager - someone to manage the packaging and release process for your
 
 A project manager - someone keeping track of all the moving parts and make sure that everything that needs to happen is happening. (TJ)
 
-Programming Roles:
+# Programming Roles:
 
 Front end lead (Vishy?)
 
