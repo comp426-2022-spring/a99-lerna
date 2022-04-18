@@ -1,0 +1,6 @@
+List of Dependencies Used
+
+node.js
+express
+minimist
+better-sqlite3
