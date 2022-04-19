@@ -1,0 +1,12 @@
+{
+  "name": "health-tracker-api",
+  "version": "1.0.0",
+  "description": "backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Luke Duckworth",
+  "license": "MIT"
+}
