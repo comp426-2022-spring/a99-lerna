@@ -4,7 +4,7 @@
   "description": "backend",
   "main": "server.js",
   "scripts": {
-    "test": "nodemon server.js",
+    "test": "npx nodemon server.js",
     "start": "node server.js"
   },
   "author": "Luke Duckworth",
