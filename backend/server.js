@@ -1,12 +1,8 @@
-import express from 'express';
+const express = require("express");
+
+var port = 5555 // (default 5555)
+
 const app = express()
-import minimist from 'minimist';
-
-// CL argument
-const args = minimist(process.argv.slice(2));
-args['port'];
-var port = args.port || 5000 // (default 5000)
-
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
