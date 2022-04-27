@@ -7,7 +7,7 @@ function Create() {
             <title>
                 Welcome! Create you account below.
             </title>
-            // input full name
+            {/* input full name */}
             <form name = "nameinput">
                 <label fullname = "fullname">
                     <strong>
@@ -16,7 +16,7 @@ function Create() {
                     </strong>
                 </label>
             </form>
-            // input username
+            {/* input username */}
             <form id = "usernameinput">
                 <label for="username">
                     <strong>
@@ -25,7 +25,7 @@ function Create() {
                     <input type="text" id="username"></input>
                 </label>
             </form>
-            // input password
+            {/* input password */}
             <form id = "passwordinput">
                 <label for="password">
                     <strong>
@@ -34,7 +34,7 @@ function Create() {
                     <input type="text" id="password"></input>
                 </label>
             </form>
-            // retype password (figure out how to compare them and display an error message if they don't match...)
+            {/* retype password (figure out how to compare them and display an error message if they don't match...) */}
             <form id = "retypepasswordinput">
                 <label for="retypepassword">
                     <strong>
@@ -43,7 +43,7 @@ function Create() {
                     <input type="text" id="password"></input>
                 </label>
             </form>
-            // input height
+            {/* input height */}
             <form id = "heightinput">
                 <label for="height">
                     <strong>
@@ -52,7 +52,7 @@ function Create() {
                     <input type="text" id="height"></input>
                 </label>
             </form>
-            // input weight
+            {/* input weight */}
             <form id = "weightinput">
                 <label for="weight">
                     <strong>
@@ -61,7 +61,7 @@ function Create() {
                     <input type="text" id="weight"></input>
                 </label>
             </form>
-            // what other items do we want with the account?
+            {/* what other items do we want with the account? */}
 
             <input type="submit" value="Submit"></input>
         </div>
