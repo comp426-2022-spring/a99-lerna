@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Server port
-var port = process.env.PORT || 5000 
+var port = process.env.PORT || 5555 
 // Start server
 const server = app.listen(port, () => {
     console.log("Server running on port %PORT%".replace("%PORT%", port))
