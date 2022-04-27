@@ -27,7 +27,7 @@ function Login() {
             <input type="submit" value="Create Account"></input>
         </div>
     )
-    
+
 }
 
 export default Login

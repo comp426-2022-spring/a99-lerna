@@ -3,7 +3,6 @@ var app = express()
 
 const fs = require('fs')
 const morgan = require('morgan')
-
 const db = require("./database.js")
 
 app.use(express.urlencoded({ extended: true }));
