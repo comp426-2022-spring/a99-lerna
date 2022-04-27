@@ -56,10 +56,14 @@ app.get("/app/user/:id", (req, res) => {
 app.patch("/app/update/user/:id", (req, res) => {
     let data = {
         user: req.body.username,
-        pass: req.body.password
+        pass: req.body.password,
+        height: req.body.height,
+        weight: req.body.weight,
+        weeks: req.body.weeks,
+        goal: req.body.goal
     }
-    const stmt = db.prepare('UPDATE userinfo SET username = COALESCE(?,username), password = COALESCE(?,password) WHERE id = ?')
-    const info = stmt.run(data.user, data.pass, req.params.id)
+    const stmt = db.prepare('UPDATE userinfo SET username = COALESCE(?,username), password = COALESCE(?,password), height = COALESCE(?,height), weight = COALESCE(?,weight), weeks = COALESCE(?,weeks), goal = COALESCE(?,goal) WHERE id = ?')
+    const info = stmt.run(data.user, data.pass, data.height, data.weight, data.weeks, data.goal, req.params.id)
     res.status(200).json(info)
 });
 
