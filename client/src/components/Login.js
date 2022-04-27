@@ -1,9 +1,8 @@
 import React from "react";
 
-class Login extends React.Component {
-    
-    render() {
-        return(
+function Login() {
+
+    return(
         <div>
             <title>
                 Login Page
@@ -27,8 +26,7 @@ class Login extends React.Component {
             <input type="submit" value="Login"></input>
             <input type="submit" value="Create Account"></input>
         </div>
-        )
-    }
+    )
     
 }
 
