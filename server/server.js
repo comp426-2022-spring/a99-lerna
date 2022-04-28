@@ -77,11 +77,33 @@ app.patch("/app/update/user/:username", (req, res) => {
 app.delete("/app/delete/user/:username", (req, res) => {
     const stmt = db.prepare('DELETE FROM userinfo WHERE username = ?')
     const info = stmt.run(req.params.username)
-    res.status(200).json(info)
+    res.status(200).json(stmt)
 });
+
+app.post("/app/login", (req, res, next) => {
+    let data = {
+        user: req.body.username,
+        pass: req.body.password,
+    }
+    try {
+        const stmt = db.prepare('SELECT * FROM userinfo WHERE username = ? & password = ?')
+        const info = stmt.run(data.user, data.pass)
+        console.log(info)
+        if (info.length > 0) {
+            res.status(200).json(info)
+        } else {
+            res.send({message: "Incorrect Username and/or Password"})
+        }
+    } catch (e) {
+        console.error(e)
+    }
+});
+
+
+
 // Default response for any other request
 app.use(function(req, res){
-	res.json({"message":"Endpoint not found. (404)"});
+	res.json({"message":"Endpoint not found."});
     res.status(404);
 });
 
