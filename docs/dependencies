@@ -4,3 +4,6 @@ node.js
 express
 nodemon
 better-sqlite3
+morgan
+fs
+axios
