@@ -9,6 +9,7 @@ function Create() {
     const [weightCreate, setWeightCreate] = React.useState("");
     const [weeksCreate, setWeeksCreate] = React.useState("");
     const [goalCreate, setGoalCreate] = React.useState("");
+    const [newAccount, setNew] = React.useState("");
 
     const create = () => {
         Axios.post('/app/new/user', 
@@ -20,6 +21,7 @@ function Create() {
             weeks: weeksCreate,
             goal: goalCreate,
         }).then((res) => {
+            setNew("Account Created, Login Above!")
             console.log(res)
         })
         };
@@ -74,8 +76,8 @@ function Create() {
                 </label>
             </form>
             {/* what other items do we want with the account? */}
-            <form id = "weightinput">
-                <label for="weight">
+            <form id = "weeksinput">
+                <label>
                     <strong>
                         How Many Weeks?:
                     </strong>
@@ -93,8 +95,8 @@ function Create() {
                         }}></input>52 Weeks
                 </label>
             </form>
-            <form id = "weightinput">
-                <label for="weight">
+            <form id = "goalinput">
+                <label>
                     <strong>
                         What is Your Goal?:
                     </strong>
@@ -109,8 +111,12 @@ function Create() {
                         }}></input>Maintain
                 </label>
             </form>
-
             <input type="submit" value="Submit" onClick={create}></input>
+            <p>
+            <strong>
+                {newAccount}
+            </strong>
+            </p>
         </div>
     )
     
