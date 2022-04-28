@@ -27,10 +27,14 @@ app.get("/app/", (req, res, next) => {
 app.post("/app/new/user", (req, res, next) => {
     let data = {
         user: req.body.username,
-        pass: req.body.password
+        pass: req.body.password,
+        height: req.body.height,
+        weight: req.body.weight,
+        weeks: req.body.weeks,
+        goal: req.body.goal
     }
-    const stmt = db.prepare('INSERT INTO userinfo (username, password) VALUES (?, ?)')
-    const info = stmt.run(data.user, data.pass)
+    const stmt = db.prepare('INSERT INTO userinfo (username, password, height, weight, weeks, goal) VALUES (?, ?, ?, ?, ?, ?)')
+    const info = stmt.run(data.user, data.pass, data.height, data.weight, data.weeks, data.goal)
     res.status(200).json(info)
 });
 // READ a list of users (HTTP method GET) at endpoint /app/users/
