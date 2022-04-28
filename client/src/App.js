@@ -5,6 +5,46 @@ import Create from "./components/new-user.js"
 
 function App() {
 
+  // Testing creating new user (SUCCESS)
+  const formInfo = {
+        username: "user2",
+        password: "123"
+  }
+
+  React.useEffect(() => {
+    fetch("/app/new/user", {
+      method: "POST",
+      headers: {
+        'Content-type': "application/json"
+      },
+      body: JSON.stringify(formInfo)
+    })
+    .then((res) => res.json())
+    .then((d) => console.log(d));
+  }, [])
+
+
+  // Testing changing info (FAIL)
+/*
+  const formInfo2 = {
+    password: "234"
+  }
+
+  React.useEffect(() => {
+  fetch("/app/update/user/user2", {
+    method: "PATCH",
+   headers: {
+     'Access-Control-Allow-Origin': 'http://localhost:3000',
+      'Content-type': "application/json"
+    },
+    body: JSON.stringify(formInfo2)
+  })
+  .then((res) => res.json())
+  .then((d1) => console.log(d1));
+  }, []);
+*/
+
+  // Testing recieving user info (SUCCESS)
   const [data, setData] = React.useState(null);
   const [data2, setData2] = React.useState(null);
 
@@ -16,9 +56,9 @@ function App() {
   }, []);
 
   React.useEffect(() => {
-    fetch("/app/user/user1")
+    fetch("/app/user/user2")
     .then((res) => res.json())
-    .then((data2) => setData2( data2.height));
+    .then((data2) => setData2( data2.password));
 
   }, []);
 

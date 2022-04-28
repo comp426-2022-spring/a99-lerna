@@ -2,11 +2,13 @@ var express = require("express")
 var app = express()
 
 const fs = require('fs')
+const cors = require('cors')
 const morgan = require('morgan')
 const db = require("./database.js")
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 // Server port
 var port = process.env.PORT || 5555 
@@ -53,7 +55,7 @@ app.get("/app/user/:username", (req, res) => {
 });
 
 // UPDATE a single user (HTTP method PATCH) at endpoint /app/update/user/:id
-app.patch("/app/update/user/:username", (req, res) => {
+app.patch("/app/update/user/:name", (req, res) => {
     let data = {
         user: req.body.username,
         pass: req.body.password,
@@ -62,14 +64,14 @@ app.patch("/app/update/user/:username", (req, res) => {
         weeks: req.body.weeks,
         goal: req.body.goal
     }
-    const stmt = db.prepare('UPDATE userinfo SET username = COALESCE(?,username), password = COALESCE(?,password), height = COALESCE(?,height), weight = COALESCE(?,weight), weeks = COALESCE(?,weeks), goal = COALESCE(?,goal) WHERE username = ?')
+    const stmt = db.prepare('UPDATE userinfo SET username = COALESCE(?,username), password = COALESCE(?,password), height = COALESCE(?,height), weight = COALESCE(?,weight), weeks = COALESCE(?,weeks), goal = COALESCE(?,goal) WHERE name = ?')
     const info = stmt.run(data.user, data.pass, data.height, data.weight, data.weeks, data.goal, req.params.id)
     res.status(200).json(info)
 });
 
 // DELETE a single user (HTTP method DELETE) at endpoint /app/delete/user/:id
-app.delete("/app/delete/user/:username", (req, res) => {
-    const stmt = db.prepare('DELETE FROM userinfo WHERE username = ?')
+app.delete("/app/delete/user/:name", (req, res) => {
+    const stmt = db.prepare('DELETE FROM userinfo WHERE name = ?')
     const info = stmt.run(req.params.id)
     res.status(200).json(info)
 });
