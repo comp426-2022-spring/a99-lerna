@@ -1,13 +1,22 @@
 Endpoints:
 
 "/app/"
+base endpoint for API
 
 "/app/new/user/"
+creates new user in database
 
 "/app/users"
+displays all users
 
 "/app/user/:name"
+displays single user
 
 "app/update/user/:name"
+updates single user
 
 "/app/delete/user/:name"
+deletes single user
+
+"app/login"
+allows login attempt and returns message depending on if successful or not
