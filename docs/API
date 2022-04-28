@@ -1,0 +1,13 @@
+Endpoints:
+
+"/app/"
+
+"/app/new/user/"
+
+"/app/users"
+
+"/app/user/:name"
+
+"app/update/user/:name"
+
+"/app/delete/user/:name"
