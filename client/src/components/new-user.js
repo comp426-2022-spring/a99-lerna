@@ -27,7 +27,7 @@ function Create() {
     return(
         <div>
             <h1>
-                Don't have an account? Create one below.
+                Don't have an account? Create one below!
             </h1>
             {/* input username */}
             <form id = "usernameinput">

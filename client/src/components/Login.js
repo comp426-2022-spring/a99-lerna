@@ -27,10 +27,10 @@ function Login() {
     return(
         <div>
             <h1>
-                Already Have an Account? Login Here.
+                Login Here
             </h1>
             <form id = "usernameinput">
-                <label for="username">
+                <label>
                     <strong>
                         Username:
                     </strong>
@@ -40,7 +40,7 @@ function Login() {
                 </label>
             </form>
             <form id = "passwordinput">
-                <label for="password">
+                <label>
                     <strong>
                         Password:
                     </strong>
