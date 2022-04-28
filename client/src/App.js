@@ -5,6 +5,13 @@ import Create from "./components/new-user.js"
 
 function App() {
 
+  return (
+  <div>
+    <Login></Login>
+    <Create></Create>
+  </div>
+  );
+  /*
   // Testing creating new user (SUCCESS)
   const formInfo = {
         username: "user2",
@@ -25,7 +32,7 @@ function App() {
 
 
   // Testing changing info (FAIL)
-/*
+
   const formInfo2 = {
     password: "234"
   }
@@ -42,7 +49,7 @@ function App() {
   .then((res) => res.json())
   .then((d1) => console.log(d1));
   }, []);
-*/
+
 
   // Testing recieving user info (SUCCESS)
   const [data, setData] = React.useState(null);
@@ -71,6 +78,7 @@ function App() {
     </div>
    
   );
+  */
 }
 
 export default App;
