@@ -42,9 +42,9 @@ app.get("/app/users", (req, res) => {
 });
 
 // READ a single user (HTTP method GET) at endpoint /app/user/:id
-app.get("/app/user/:id", (req, res) => {
+app.get("/app/user/:username", (req, res) => {
     try {
-        const stmt = db.prepare('SELECT * FROM userinfo WHERE id = ?').get(req.params.id);
+        const stmt = db.prepare('SELECT * FROM userinfo WHERE username = ?').get(req.params.id);
         res.status(200).json(stmt)
     } catch (e) {
         console.error(e)
@@ -53,7 +53,7 @@ app.get("/app/user/:id", (req, res) => {
 });
 
 // UPDATE a single user (HTTP method PATCH) at endpoint /app/update/user/:id
-app.patch("/app/update/user/:id", (req, res) => {
+app.patch("/app/update/user/:username", (req, res) => {
     let data = {
         user: req.body.username,
         pass: req.body.password,
@@ -62,14 +62,14 @@ app.patch("/app/update/user/:id", (req, res) => {
         weeks: req.body.weeks,
         goal: req.body.goal
     }
-    const stmt = db.prepare('UPDATE userinfo SET username = COALESCE(?,username), password = COALESCE(?,password), height = COALESCE(?,height), weight = COALESCE(?,weight), weeks = COALESCE(?,weeks), goal = COALESCE(?,goal) WHERE id = ?')
+    const stmt = db.prepare('UPDATE userinfo SET username = COALESCE(?,username), password = COALESCE(?,password), height = COALESCE(?,height), weight = COALESCE(?,weight), weeks = COALESCE(?,weeks), goal = COALESCE(?,goal) WHERE username = ?')
     const info = stmt.run(data.user, data.pass, data.height, data.weight, data.weeks, data.goal, req.params.id)
     res.status(200).json(info)
 });
 
 // DELETE a single user (HTTP method DELETE) at endpoint /app/delete/user/:id
-app.delete("/app/delete/user/:id", (req, res) => {
-    const stmt = db.prepare('DELETE FROM userinfo WHERE id = ?')
+app.delete("/app/delete/user/:username", (req, res) => {
+    const stmt = db.prepare('DELETE FROM userinfo WHERE username = ?')
     const info = stmt.run(req.params.id)
     res.status(200).json(info)
 });
