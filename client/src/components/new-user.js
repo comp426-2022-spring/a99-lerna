@@ -55,7 +55,7 @@ function Create() {
             <form id = "heightinput">
                 <label for="height">
                     <strong>
-                        Height
+                        Height (inches):
                     </strong>
                     <input type="text" id="height" onChange={(e) => {
                             setHeightCreate(e.target.value);
@@ -66,7 +66,7 @@ function Create() {
             <form id = "weightinput">
                 <label for="weight">
                     <strong>
-                        Weight:
+                        Weight (pounds):
                     </strong>
                     <input type="text" id="weight" onChange={(e) => {
                             setWeightCreate(e.target.value);

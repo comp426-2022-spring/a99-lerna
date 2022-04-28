@@ -6,7 +6,7 @@ function Login() {
     return(
         <div>
             <h1>
-                Already Have an Account? Login Here
+                Already Have an Account? Login Here.
             </h1>
             <form id = "usernameinput">
                 <label for="username">
