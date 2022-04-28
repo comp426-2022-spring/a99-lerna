@@ -86,10 +86,10 @@ app.post("/app/login", (req, res, next) => {
         pass: req.body.password,
     }
     try {
-        const stmt = db.prepare('SELECT * FROM userinfo WHERE username = ? & password = ?')
-        const info = stmt.run(data.user, data.pass)
+        const stmt = db.prepare('SELECT * FROM userinfo WHERE username = ? AND password = ?');
+        const info = stmt.get(data.user, data.pass);
         console.log(info)
-        if (info.length > 0) {
+        if (info) {
             res.status(200).json(info)
         } else {
             res.send({message: "Incorrect Username and/or Password"})

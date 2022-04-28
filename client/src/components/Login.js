@@ -17,6 +17,8 @@ function Login() {
 
             if(res.data.message){
                 setLoginStatus(res.data.message)
+            } else {
+                setLoginStatus("Login Successful")
             }
             console.log(res.data)
         })
@@ -48,10 +50,11 @@ function Login() {
                 </label>
             </form>
             <input type="submit" value="Login" onClick = {login}></input>
-
-            <h1>
+            <p>
+            <strong>
                 {loginStatus}
-            </h1>
+            </strong>
+            </p>
         </div>
     )
 
