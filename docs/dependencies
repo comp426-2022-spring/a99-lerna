@@ -7,3 +7,4 @@ better-sqlite3
 morgan
 fs
 axios
+http-proxy-middleware

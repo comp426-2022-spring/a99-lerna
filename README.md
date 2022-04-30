@@ -1,5 +1,10 @@
 # Health Tracking App
 
+# HOW TO RUN APP
+
+1. run "npm start" in base directory
+2. run "npm start" in /client directory
+
 # Summary 
 
 1. User inputs their first/last name, username, password, email, height, weight, exercise frequency (per week), estimated caloric intake (per day), select goal
