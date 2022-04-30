@@ -7,12 +7,28 @@
 
 # Summary 
 
-1. User inputs their first/last name, username, password, email, height, weight, exercise frequency (per week), estimated caloric intake (per day), select goal
+1. User inputs their first/last name, username, password, email, height, weight, exercise frequency (per week), estimated caloric intake (per day), select fitness goal (cut, bulk, maintain)
 2. Initial login begins new 7-day session. User inputs their caloric intake/workout goals for the week (max/min calories, number of workouts/workout minutes)
 3. Throughout this period, log in to log workouts/food intake and this contributes to calculation
 4. At the end of the week, app displays success/failure, comparing goals to activity, proceeds to give recommendation for next week
 
-# Team management (so far)
+## Files
+
+App.js:
+
+alg.js:
+
+Login.js:
+
+setupProxy.js:
+
+index.js:
+
+database.js:
+
+server.js
+
+# Team management
 
 ## Logistic Roles:
 
