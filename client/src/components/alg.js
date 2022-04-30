@@ -9,14 +9,14 @@ const maintainEx = ["Walking", "Strength Training", "Pilates"]
 function recommend(height, weight, goal) {
     // figure out how to import from database (!!!)
     // in inches
-    var heightInCm = height * 2.54
+    var heightInm = height * 2.54 / 100;
     // in pounds
-    var weightInKg = weight * 0.45359237
+    var weightInKg = weight * 0.45359237;
     // cut, bulk, maintain
     // weeks?
-    var weeks = 0
+    var weeks = 0;
     //BMI
-    var BMI = weightInKg / (heightInCm * heightInCm)
+    var BMI = weightInKg / (heightInm * heightInm);
     //result
     var exRecommendation = ""
     var message = ""
