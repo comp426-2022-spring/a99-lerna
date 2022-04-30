@@ -2,7 +2,7 @@
 
 # Description
 
-Insert description paragraph:
+With public health as the primary motivation for our team-based app development, we all took an interest in promoting the personal health and fitness of our users. In our initial project meeting, we recognized that consistent, tailored exercise and careful diet are two of the most important factors for physical fitness. Therefore, we decided to create an app that considers the current fitness of a user by utilizing the following information: height, weight, BMI, current exercise frequency, and current daily caloric intake. Our app allows users to select a particular goal to personally craft their fitness plan: maintain, cut, or bulk. All of these factors are manipulated to give personalized exercise and diet recommendations that aim to promote a consistent, organized physical health plan for our users.
 
 ## Run Instructions
 
