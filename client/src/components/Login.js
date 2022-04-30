@@ -21,6 +21,7 @@ function Login() {
                 setLoginStatus(res.data.message)
             } else {
                 setLoginStatus("Login Successful")
+                setNew("")
             }
             console.log(res.data)
         })
