@@ -3,7 +3,7 @@
 # HOW TO RUN APP
 
 1. run "npm start" in base directory
-2. run "npm build" in /client directory
+2. run "npm start" in /client directory
 
 # Summary 
 
