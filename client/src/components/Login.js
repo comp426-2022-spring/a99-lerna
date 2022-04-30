@@ -20,7 +20,6 @@ function Login() {
             username: user,
             password: pass,
         }).then((res) => {
-
             if(res.data.message){
                 setLoginStatus(res.data.message)
             } else {
@@ -28,6 +27,10 @@ function Login() {
                 setNew("")
             }
             console.log(res.data)
+            setHeight(res.data.height)
+            setWeight(res.data.weight)
+            setWeeks(res.data.weeks)
+            setGoal(res.data.goal)
         })
     }
 
@@ -78,6 +81,11 @@ function Login() {
         }).then((res) => {
             setUpdater("Information Updated")
             console.log(res.data)
+            setPass(passCreate)
+            setHeight(heightCreate)
+            setWeight(weightCreate)
+            setWeeks(weeksCreate)
+            setGoal(goalCreate)
         })
     }
 
@@ -112,7 +120,7 @@ function Login() {
                 </label>
             </form>
             <strong>
-                Old Height: {heightCreate}
+                Old Height: {height}
             </strong>
             {/* input height */}
             <form id = "heightinput">
@@ -126,7 +134,7 @@ function Login() {
                 </label>
             </form>
             <strong>
-                Old Weight: {weightCreate}
+                Old Weight: {weight}
             </strong>
             {/* input weight */}
             <form id = "weightinput">
@@ -140,7 +148,7 @@ function Login() {
                 </label>
             </form>
             <strong>
-                Old # Weeks: {weeksCreate}
+                Old # Weeks: {weeks}
             </strong>
             {/* what other items do we want with the account? */}
             <form id = "weeksinput">
@@ -162,9 +170,9 @@ function Login() {
                         }}></input>52 Weeks
                 </label>
             </form>
-            <p>
-                Old Goal: {goalCreate}
-            </p>
+            <strong>
+                Old Goal: {goal}
+            </strong>
             <form id = "goalinput">
                 <label>
                     <strong>
