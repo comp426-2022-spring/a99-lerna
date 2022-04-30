@@ -1,11 +1,15 @@
 # Health Tracking App
 
-# HOW TO RUN APP
+# Description
+
+Insert description paragraph:
+
+## Run Instructions
 
 1. run "npm start" in base directory
 2. run "npm start" in /client directory
 
-# Summary 
+## App Summary 
 
 1. User inputs their first/last name, username, password, email, height, weight, exercise frequency (per week), estimated caloric intake (per day), select fitness goal (cut, bulk, maintain)
 2. Initial login begins new 7-day session. User inputs their caloric intake/workout goals for the week (max/min calories, number of workouts/workout minutes)
@@ -28,6 +32,10 @@ database.js:
 
 server.js
 
+## Dependency List
+
+node.js, express, nodemon, better-sqlite3, morgan, fs, axios, http-proxy-middleware
+
 # Team management
 
 ## Logistic Roles:
@@ -44,11 +52,11 @@ A project manager - someone keeping track of all the moving parts and make sure 
 
 ## Programming Roles:
 
-Front end lead (Vishy?)
+Front end lead (Vishy)
 
-Back end lead (Luke?)
+Back end lead (Luke)
 
-Database lead (TJ?)
+Database lead (TJ)
 
 Design lead (Michael)
 
