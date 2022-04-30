@@ -74,10 +74,17 @@ app.patch("/app/update/user/:username", (req, res) => {
 });
 
 // DELETE a single user (HTTP method DELETE) at endpoint /app/delete/user/:id
-app.delete("/app/delete/user/:username", (req, res) => {
+app.post("/app/delete/user", (req, res) => {
+    let data = {
+        user: req.body.username,
+    }
+    try {
     const stmt = db.prepare('DELETE FROM userinfo WHERE username = ?')
-    const info = stmt.run(req.params.username)
+    const info = stmt.run(data.user)
     res.status(200).json(stmt)
+    } catch (e) {
+        console.error(e)
+    }
 });
 
 app.post("/app/login", (req, res, next) => {

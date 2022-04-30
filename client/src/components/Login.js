@@ -1,6 +1,5 @@
 import React from "react";
 import Axios from "axios";
-import Dashboard from "./Dashboard.js";
 
 function Login() {
 
@@ -50,10 +49,33 @@ function Login() {
         };
 
 
-
+        const deleteAcc = () => {
+            Axios.post('/app/delete/user', 
+            {
+                username: user,
+            }).then((res) => {
+                console.log(res.data)
+                setLoginStatus("")
+            })
+        }
 
     if(loginStatus == "Login Successful") {
-        return (<Dashboard/>)
+        return (
+        <>
+        <div>
+        <h1>
+            Recommended Exercise:
+        </h1>
+        <p>
+            NEED ALGORITHM TO DETERMINE
+        </p>
+        </div>
+        <div>
+        <input type="submit" value="Delete Account" onClick = {deleteAcc}></input>
+        </div>
+
+        </>
+        )
     } else {
 
     return(
