@@ -1,6 +1,7 @@
 import React from "react";
 import Axios from "axios";
 import calories from "./calories.js";
+import recommend from "./alg.js";
 
 function Login() {
 
@@ -98,7 +99,11 @@ function Login() {
             Recommended Exercise:
         </h1>
         <p>
-            NEED ALGORITHM TO DETERMINE
+        <strong>
+            {recommend(height, weight, goal)[0]}
+            <br></br>
+            {recommend(height, weight, goal)[1]}
+        </strong>
         </p>
         </div>
 
