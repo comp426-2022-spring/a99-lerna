@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import calories from "./calories.js";
 
 function Login() {
 
@@ -98,6 +99,17 @@ function Login() {
         </h1>
         <p>
             NEED ALGORITHM TO DETERMINE
+        </p>
+        </div>
+
+        <div> 
+        <h1>
+            Recommended Daily Caloric Intake:
+        </h1>
+        <p>
+        <strong>
+                {calories(height, weight, goal)}
+        </strong>
         </p>
         </div>
 
