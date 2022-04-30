@@ -2,6 +2,7 @@ import React from "react";
 import Axios from "axios";
 import calories from "./calories.js";
 import recommend from "./alg.js";
+import arnold from "../images/arnold.jpg";
 
 function Login() {
 
@@ -117,7 +118,7 @@ function Login() {
         </strong>
         </p>
         </div>
-
+        <img src={arnold} />
         <div>
             <h1>
                 Update User Info:

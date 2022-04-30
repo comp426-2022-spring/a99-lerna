@@ -93,7 +93,7 @@ function recommend(height, weight, goal) {
             // no adjusting for weight 
     }
     // returning recommendation + BMI notification
-    var BMInotif = "Your BMI is: " + BMI
+    var BMInotif = "Your BMI is: " + BMI.toFixed(1)
     var complete = message + BMInotif
 
     return [message, BMInotif]
