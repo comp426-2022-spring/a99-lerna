@@ -5,6 +5,10 @@ function Login() {
 
     const [user, setUser] = React.useState("");
     const [pass, setPass] = React.useState("");   
+    const [height, setHeight] = React.useState("");
+    const [weight, setWeight] = React.useState("");
+    const [weeks, setWeeks] = React.useState("");
+    const [goal, setGoal] = React.useState("");
 
     const [loginStatus, setLoginStatus] = React.useState(""); 
 
@@ -93,44 +97,56 @@ function Login() {
             <h1>
                 Update User Info:
             </h1>
+            <strong>
+                Old Password: {pass}
+            </strong>
             {/* input password */}
             <form id = "passwordinput">
                 <label for="password">
                     <strong>
-                        Password:
+                        New Password:
                     </strong>
                     <input type="text" id="password" onChange={(e) => {
                             setPassCreate(e.target.value);
                         }}></input>
                 </label>
             </form>
+            <strong>
+                Old Height: {heightCreate}
+            </strong>
             {/* input height */}
             <form id = "heightinput">
                 <label for="height">
                     <strong>
-                        Height (inches):
+                        New Height (inches):
                     </strong>
                     <input type="text" id="height" onChange={(e) => {
                             setHeightCreate(e.target.value);
                         }}></input>
                 </label>
             </form>
+            <strong>
+                Old Weight: {weightCreate}
+            </strong>
             {/* input weight */}
             <form id = "weightinput">
                 <label for="weight">
                     <strong>
-                        Weight (pounds):
+                        New Weight (pounds):
                     </strong>
                     <input type="text" id="weight" onChange={(e) => {
                             setWeightCreate(e.target.value);
                         }}></input>
                 </label>
             </form>
+            <strong>
+                Old # Weeks: {weeksCreate}
+            </strong>
             {/* what other items do we want with the account? */}
             <form id = "weeksinput">
                 <label>
                     <strong>
-                        How Many Weeks?:
+                        New # Weeks?:
                     </strong>
                     <input type="radio" name = "weeks" value = "1 Week" onChange={(e) => {
                             setWeeksCreate(1);
@@ -146,6 +162,9 @@ function Login() {
                         }}></input>52 Weeks
                 </label>
             </form>
+            <p>
+                Old Goal: {goalCreate}
+            </p>
             <form id = "goalinput">
                 <label>
                     <strong>
