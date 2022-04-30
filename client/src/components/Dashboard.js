@@ -7,7 +7,7 @@ function Dashboard() {
 
     return(
         <>
-        <h1>TEST</h1>
+        <h1>DASHBOARD</h1>
         </>
     )
 

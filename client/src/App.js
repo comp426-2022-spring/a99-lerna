@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 import Login from "./components/Login.js"
-import Create from "./components/new-user.js"
 
 function App() {
 
   return (
   <div>
     <Login></Login>
-    <Create></Create>
   </div>
   );
 
