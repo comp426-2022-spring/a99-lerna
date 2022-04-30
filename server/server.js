@@ -59,7 +59,7 @@ app.get("/app/user/:username", (req, res) => {
 });
 
 // UPDATE a single user (HTTP method PATCH) at endpoint /app/update/user/:id
-app.patch("/app/update/user/:username", (req, res) => {
+app.post("/app/update/user", (req, res) => {
     let data = {
         user: req.body.username,
         pass: req.body.password,
@@ -68,8 +68,8 @@ app.patch("/app/update/user/:username", (req, res) => {
         weeks: req.body.weeks,
         goal: req.body.goal
     }
-    const stmt = db.prepare('UPDATE userinfo SET username = COALESCE(?,username), password = COALESCE(?,password), height = COALESCE(?,height), weight = COALESCE(?,weight), weeks = COALESCE(?,weeks), goal = COALESCE(?,goal) WHERE username = ?')
-    const info = stmt.run(data.user, data.pass, data.height, data.weight, data.weeks, data.goal, req.params.id)
+    const stmt = db.prepare('UPDATE userinfo SET password = COALESCE(?,password), height = COALESCE(?,height), weight = COALESCE(?,weight), weeks = COALESCE(?,weeks), goal = COALESCE(?,goal) WHERE username = ?')
+    const info = stmt.run(data.pass, data.height, data.weight, data.weeks, data.goal, data.user)
     res.status(200).json(info)
 });
 
