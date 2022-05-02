@@ -12,10 +12,10 @@ displays all users
 "/app/user/:name"
 displays single user
 
-"app/update/user/:name"
+"app/update/user/"
 updates single user
 
-"/app/delete/user/:name"
+"/app/delete/user/"
 deletes single user
 
 "app/login"
